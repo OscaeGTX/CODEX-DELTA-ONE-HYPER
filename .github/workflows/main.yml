@@ -1,0 +1,55 @@
+name: Codex Delta One Hyper Deployment
+
+on: push: branches: - main pull_request: branches: - main workflow_dispatch:
+
+env: GITHUB_EMAIL: "alphaquadron@gmail.com" GITHUB_USERNAME: "Joseph-Lual" AZURE_DEVOPS_EMAIL: "dominions2022@outlook.com" BITBUCKET_EMAIL: "alphaquadron@gmail.com" SSH_KEY_NAME: "delta_one_key"
+
+jobs: deploy: runs-on: ubuntu-latest
+
+steps:
+- name: Checkout Code
+  uses: actions/checkout@v3
+
+- name: Set up Node.js
+  uses: actions/setup-node@v3
+  with:
+    node-version: 20
+
+- name: Install Dependencies
+  run: npm install
+
+- name: Build Application
+  run: npm run build
+
+- name: Create Directory Structure
+  run: |
+    REPOS=("/core/quantum_security/" "/core/hyper_stealth/" "/core/neural_grids/" "/core/ai_protection/" "/core/code_mutation/" "/modules/digital_cloaking/" "/modules/signal_disruption/" "/modules/psyops/" "/modules/entanglement_firewalls/" "/modules/self_healing/" "/assets/3d_graphics/" "/assets/ui_elements/" "/assets/voice_commands/" "/assets/stealth_protocols/" "/assets/visual_effects/" "/reports/security_audit/" "/reports/system_logs/" "/reports/threat_analysis/" "/reports/encryption_metrics/" "/reports/ai_training/" "/config/security_keys/" "/config/system_settings/" "/config/ai_profiles/" "/config/network_shielding/" "/config/quantum_channels/" "/data/encrypted_files/" "/data/backup_nodes/" "/data/simulation_results/" "/data/sentient_logs/" "/data/ai_learning/" "/testing/penetration_tests/" "/testing/ai_resilience/" "/testing/quantum_tests/" "/testing/stealth_tests/" "/testing/final_validation/" "/docs/user_manual/" "/docs/api_reference/" "/docs/installation_guide/" "/docs/white_papers/" "/docs/cyber_warfare_protocols/" "/ownership/" "/finance/" "/advertising/" "/media/")
+    for repo in "${REPOS[@]}"; do mkdir -p "$PWD$repo"; echo "Created directory: $PWD$repo"; done
+
+- name: Deploy to GitHub Pages
+  uses: peaceiris/actions-gh-pages@v3
+  with:
+    personal_token: ${{ secrets.GITHUB_TOKEN }}
+    external_repository: ${{ github.repository }}
+    publish_dir: ./dist
+
+- name: Deploy to DockerHub
+  run: |
+    echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+    docker build -t delta-one-hyper .
+    docker tag delta-one-hyper ${{ secrets.DOCKERHUB_USERNAME }}/delta-one-hyper:latest
+    docker push ${{ secrets.DOCKERHUB_USERNAME }}/delta-one-hyper:latest
+
+- name: Final Sync to All Remotes
+  run: |
+    git add .
+    git commit -m "Automated deployment for Codex Delta One Hyper"
+    git push origin main
+    git push gitlab main
+    git push azure main
+    git push bitbucket main
+
+- name: Clean Up
+  run: |
+    echo "Deployment complete. Repositories are now synced and live."
+
