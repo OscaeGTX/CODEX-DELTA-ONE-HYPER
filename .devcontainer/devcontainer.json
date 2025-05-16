@@ -1,0 +1,114 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {}
+}
+
+{
+  "name": "Codex-Delta-One-Hyper",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "ai-engine",
+  "workspaceFolder": "/workspace",
+  "extensions": [
+    "ms-python.python",
+    "ms-toolsai.jupyter",
+    "ms-vscode.cpptools",
+    "ms-vscode-remote.remote-containers",
+    "ms-azuretools.vscode-docker",
+    "visualstudioexptteam.vscodeintellicode",
+    "ms-vscode.cmake-tools",
+    "tamasfe.even-better-toml",
+    "eamodio.gitlens",
+    "GitHub.copilot",
+    "redhat.vscode-yaml",
+    "visualstudioexptteam.vscodeintellicode",
+    "ms-kubernetes-tools.vscode-kubernetes-tools"
+  ],
+  "settings": {
+    "python.pythonPath": "/usr/bin/python3",
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "files.autoSave": "onFocusChange",
+    "editor.tabSize": 4,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+      "source.fixAll": true
+    }
+  },
+  "postCreateCommand": "pip install -r requirements.txt",
+  "remoteUser": "root",
+  "mounts": [
+    "source=/dev,target=/dev,type=bind",
+    "source=/sys,target=/sys,type=bind",
+    "source=/run,target=/run,type=bind",
+    "source=/workspace/data,target=/workspace/data,type=bind",
+    "source=/workspace/models,target=/workspace/models,type=bind",
+    "source=/workspace/checkpoints,target=/workspace/checkpoints,type=bind"
+  ],
+  "forwardPorts": [8080, 8888, 5000, 6006, 8000, 9000, 27017, 6379],
+  "features": {
+    "docker-in-docker": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    },
+    "ghcr.io/devcontainers/features/cuda:1": {
+      "version": "12.2.0",
+      "cuda": "12.2",
+      "cudnn": "8"
+    },
+    "ghcr.io/devcontainers/features/mongo:1": {},
+    "ghcr.io/devcontainers/features/redis:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.wordWrap": "on",
+        "editor.minimap.enabled": true,
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.languageServer": "Pylance",
+        "python.linting.mypyEnabled": true,
+        "python.linting.flake8Enabled": true,
+        "security.workspace.trust.enabled": true,
+        "security.allowLocalhostAsSecureOrigin": true
+      }
+    }
+  },
+  "remoteEnv": {
+    "CUDA_VISIBLE_DEVICES": "0,1",
+    "LD_LIBRARY_PATH": "/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64",
+    "PYTHONUNBUFFERED": "1",
+    "DEVELOPMENT_MODE": "True",
+    "LOG_LEVEL": "DEBUG",
+    "FORCE_MULTIPLIER": "ACTIVE"
+  },
+  "securityOpt": [
+    "apparmor=unconfined",
+    "seccomp=unconfined",
+    "no-new-privileges"
+  ],
+  "containerEnv": {
+    "AI_ENGINE_SECRET": "${localEnv:AI_ENGINE_SECRET}",
+    "DATABASE_URL": "${localEnv:DATABASE_URL}",
+    "JWT_SECRET": "${localEnv:JWT_SECRET}",
+    "MONGO_INITDB_ROOT_USERNAME": "admin",
+    "MONGO_INITDB_ROOT_PASSWORD": "super_secure_password",
+    "REDIS_PASSWORD": "ultra_secure_password"
+  },
+  "runArgs": [
+    "--gpus=all",
+    "--cap-add=SYS_ADMIN",
+    "--cap-add=NET_ADMIN",
+    "--shm-size=4g",
+    "--network=host",
+    "--device=/dev/nvidia0",
+    "--device=/dev/nvidiactl",
+    "--device=/dev/nvidia-uvm",
+    "--privileged"
+  ],
+  "workspaceMount":
