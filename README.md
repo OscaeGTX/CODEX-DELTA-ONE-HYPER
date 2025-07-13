@@ -4,7 +4,7 @@ This is the AI engine for Codex Delta One Hyper. It encompasses all necessary mo
  
                 Designed By 
        Software Engineer Joseph Lual
-   Ziam-Ziam Cybertech Juga South Sudan
+   Ziam-Ziam Cybertech Juba South Sudan
 Email:alphaquadron@gmail.com Contact:          +61423641251 Github,Microsoft Azure,Google  Replit and Vercel platforms Developer.      Current reputalable softwares in readiness to serve civilization at mass global scale
 Codex Open Ai/Cloud, Cosmic cloud,Canva Developers Console, Zion Developers Terminal, Python Ds/AI Platform, SSA-50X Cyber Security AI,Autonomous Ai Judge,Preside overcases with unbias ethical deliberation using both national and international laws/Jurisdictions trained with global Libraries/judicial cases past and present.International Search and Rescue Ai. Tech description remains classified. Defense Next Gen AI. specs: classified. Future automotive,Energy and smart cities Techs are currently in planning stages.
 unified global education system online with
