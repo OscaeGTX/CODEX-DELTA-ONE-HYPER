@@ -1,4 +1,4 @@
-# Codex Delta One Hyper - AI Engine
+# Codex Open AI Engine
 
 This is the AI engine for Codex Delta One Hyper. It encompasses all necessary modules to perform AI-related tasks such as model training, inference, and data preprocessing.
 
