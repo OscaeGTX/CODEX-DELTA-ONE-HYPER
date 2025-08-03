@@ -60,7 +60,7 @@ As principal architect across the digital domains of GitHub, Microsoft Azure, Go
 - **Global Healthcare system of Sentinel**
 - **Biochem Technology invented for discovery of treatment to incurable diseases**
 - **Global pandemic early warning AI technology**
-- **Unified Global Academic of sentien Excellence taught by virtual AI**
+- **Unified Global Academy of sentien Excellence taught by virtual AI**
 - **Autonomous AI Judge:** An impartial digital magistrate, adjudicating with fidelity to both national and international jurisprudence—trained upon an exhaustive corpus of legal precedents.
 - **International Search and Rescue AI** *(specifications classified for security)*  
 - **Defense Next Gen AI** *(classified)*
