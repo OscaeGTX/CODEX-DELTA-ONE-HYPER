@@ -87,7 +87,7 @@ This infrastructure is dedicated to the pursuit of peace, justice, and the respo
 
 ### Jurisdictional Mandate
 
-CODEX DELTA ONE HYPER is governed under the MIT License, reaffirming an unambiguous commitment to equitable access, collaborative progress, and the universal right to technological empowerment.
+CODEX  is governed under the MIT License, reaffirming an unambiguous commitment to equitable access, collaborative progress, and the universal right to technological empowerment.
 
 ---
 
