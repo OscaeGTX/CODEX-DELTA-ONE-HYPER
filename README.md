@@ -2,7 +2,7 @@ Certainly. Here is a rewritten README for CODEX-DELTA-ONE-HYPER, employing advan
 
 ---
 
-# CODEX DELTA ONE HYPER  
+# CODEX 
 ### The Codex Open AI/Cloud Engine: A Sovereign Intelligence Infrastructure
 
 ---
