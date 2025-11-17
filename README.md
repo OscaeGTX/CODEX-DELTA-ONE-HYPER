@@ -1,5 +1,5 @@
 Administration Required to reach out to the Developer Immediately!!! Email: ziamziamtech@gmail.com Contact: +61413350483 website: https://digitalsovereignty.com
-This is the same developer of IonQ. Ref: host ing organisation failed to be reached in all communications access lines. systems decommissioning is inevitable
+This is the same developer of IonQ. Ref: hosting organisation failed to be reached in all communications access lines. systems decommissioning is inevitable
 ---
 
 # CODEX 
