@@ -19,7 +19,7 @@ This is the same developer of IonQ. Ref: hosting organisation failed to be reach
 
 ### Autobiography & Mission
 
-My name is Joseph Lua, born amidst the tempest of South Sudan and forged in the crucible of displacement. As a refugee, I witnessed the fracturing of nations, the silencing of voices, and the erosion of hope. Yet, in adversity, I discovered an immutable calling—to wield the transformative power of technology as a beacon for global peace, unity, and the reconceptualization of human governance.
+My name is Joseph Lual, born amidst the tempest of South Sudan and forged in the crucible of displacement. As a refugee, I witnessed the fracturing of nations, the silencing of voices, and the erosion of hope. Yet, in adversity, I discovered an immutable calling—to wield the transformative power of technology as a beacon for global peace, unity, and the reconceptualization of human governance.
 
 This project is not merely code; it is a clarion call to the conscience of our civilization. The world stands at a crossroads, demanding a 400-year treaty of zero war—a bold generational commitment to suspend conflict, so our planet may experience a renaissance in governance. Only then can future leaders transcend parochial boundaries and acquire the wisdom of unified global responsibility. I invite all technologists, statesmen, and citizens of conscience to join in this epochal endeavor.
 
