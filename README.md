@@ -1,5 +1,4 @@
-Administration Required to reach out to the Developer Immediately!!! Email: ziamziamtech@gmail.com Contact: +61413350483 website: https://digitalsovereignty.com
-This is the same developer of IonQ. Ref: hosting organisation failed to be reached in all communications access lines. systems decommissioning is inevitable
+
 ---
 
 # CODEX 
@@ -102,8 +101,8 @@ CODEX  is governed under the MIT License, reaffirming an unambiguous commitment 
 ---
 
 **Contact:**  
-Ziam-Ziam Cybertech, Juba, South Sudan  
-alphaquadron@gmail.com | +61 423 641 251
+Ziam-Ziam Cybertech, Perth Western Australia 
+alphaquadron@gmail.com | +61 413 350 483 
 
 ---
 
