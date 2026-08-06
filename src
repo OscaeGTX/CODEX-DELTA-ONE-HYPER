@@ -1,1 +1,50 @@
+"""
+src/ai_model.py
+Simple, well-documented AIModel wrapper using tf.keras with save/load helpers.
+"""
+from typing import Optional, Tuple
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+import os
 
+class AIModel:
+    def __init__(self, input_shape: Tuple[int, ...] = (784,), num_classes: int = 10):
+        self.input_shape = input_shape
+        self.num_classes = num_classes
+        self.model: Optional[keras.Model] = None
+        self._build_model()
+
+    def _build_model(self) -> None:
+        """Builds and compiles a simple MLP classification model."""
+        inputs = keras.Input(shape=self.input_shape)
+        x = layers.Dense(256, activation="relu")(inputs)
+        x = layers.Dropout(0.2)(x)
+        x = layers.Dense(128, activation="relu")(x)
+        outputs = layers.Dense(self.num_classes, activation="softmax")(x)
+        self.model = keras.Model(inputs=inputs, outputs=outputs)
+        self.model.compile(optimizer=keras.optimizers.Adam(),
+                           loss="sparse_categorical_crossentropy",
+                           metrics=["accuracy"])
+
+    def get_model(self) -> keras.Model:
+        assert self.model is not None
+        return self.model
+
+    def train(self, train_data, train_labels, val_data=None, epochs: int = 10, batch_size: int = 64, callbacks=None):
+        """Train the model. train_data can be numpy arrays or tf.data.Dataset."""
+        return self.model.fit(train_data, train_labels, validation_data=val_data, epochs=epochs, batch_size=batch_size, callbacks=callbacks)
+
+    def evaluate(self, test_data, test_labels, batch_size: int = 64):
+        return self.model.evaluate(test_data, test_labels, batch_size=batch_size)
+
+    def save(self, path: str):
+        os.makedirs(path, exist_ok=True)
+        self.model.save(path, save_format="tf")
+
+    @classmethod
+    def load(cls, path: str) -> "AIModel":
+        model = keras.models.load_model(path)
+        instance = cls(input_shape=model.input_shape[1:], num_classes=int(model.output_shape[-1]))
+        instance.model = model
+        return instance
