@@ -2,7 +2,7 @@
 ---
 
 # CODEX 
-### The Codex Open AI/Cloud Engine: A Sovereign Intelligence Infrastructure
+###Code is an Open AI/Cloud Engine: A Sovereign Intelligence Infrastructure
 
 ---
 
